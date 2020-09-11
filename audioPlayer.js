@@ -16,7 +16,8 @@ window.onload = playSong;
 
 function playSong() {
    audio.src = audios[currentSong];
-   // audio.play();
+   audio.play();
+   playPauseBtn.innerHTML = `<i class="fa fa-pause"></i>`;
 }
 
 //
@@ -65,4 +66,29 @@ function totalDuration(seconds) {
    min = min < 10 ? "0" + min : min;
    sec = sec < 10 ? "0" + min : sec;
    currentTime.textContent += ` & ${min}:${sec}`;
+}
+
+//clickEvent on nextButton
+function nextAudio() {
+   currentSong++;
+   if (currentSong > audios.length) {
+      currentSong = 0;
+   }
+   playSong();
+   playPauseBtn.innerHTML = `<i class="fa fa-pause"></i>`;
+   playPauseBtn.style.paddingLeft = "30px";
+   //using jquery plugin for image changing
+   $(".img img").attr("src", coverImg[currentSong]);
+}
+
+//clickEvent on prevButton
+function prevAudio() {
+   currentSong--;
+   if (currentSong < 0) {
+      currentSong = audios.length;
+   }
+   playSong();
+   playPauseBtn.innerHTML = `<i class="fa fa-pause"></i>`;
+   playPauseBtn.style.leftPadding = "30px";
+   $(".img img").attr("src", coverImg[currentSong]);
 }
