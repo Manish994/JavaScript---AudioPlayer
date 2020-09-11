@@ -43,6 +43,11 @@ audio.addEventListener("timeupdate", function () {
 
    //display currentTime and totalDuration
    convertTime(Math.floor(audio.currentTime));
+
+   //playNext Song automatically when currentSong Ended
+   if (audio.ended) {
+      nextAudio();
+   }
 })
 
 function convertTime(seconds) {
