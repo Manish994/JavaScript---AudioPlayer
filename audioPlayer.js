@@ -2,7 +2,7 @@ let fillBar = document.querySelector(".seek .fill");
 const playPauseBtn = document.querySelector(".play-pause");
 const currentTime = document.querySelector(".time");
 const volumeUp = document.querySelector(".volume-up");
-let audios = ["song/one.mp3", "song/1.mp3", "song/2.mp3", "song/3.mp3", "song/4.mp3", "song/5.mp3"];
+let audios = ["song/1.mp3", "song/2.mp3", "song/3.mp3", "song/4.mp3", "song/5.mp3"];
 const coverImg = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg", "img/6.jpg"];
 
 
